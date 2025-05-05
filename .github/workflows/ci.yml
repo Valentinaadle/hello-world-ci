@@ -1,13 +1,11 @@
 name: CI Workflow
-
-on: [push]  # Se ejecuta al hacer push
-
+on: [push]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
+      - uses: actions/checkout@v4
       - name: Run Hello World
-        run: python hello.py
+        run: |
+          python hello.py
+          echo "✔️ Script ejecutado"
